@@ -180,7 +180,7 @@
 // console.log(sortEx1.sort());
 // console.log(movements);
 
-// //!Sorting numbers
+//!Sorting numbers
 // //This is how you sort in ascending order. Note that instead of 1 t could have been any other postive number and instead of -1 it could have bben any negative number.
 // // movements.sort((a, b) => {
 // //   if (a > b) return 1;
@@ -193,3 +193,26 @@
 // //for descending
 // movements.sort((a, b) => -(a - b));
 // console.log(movements);
+
+//!Fill and Form method
+//making an array of 100 dice rolls
+//here we dont have to manually input a value, also the second arguemnt of the from method works exactly like the map function
+const diceRolls = Array.from(
+  { length: 100 },
+  (_, i) => Math.trunc(Math.random() * 6) + 1 //'_'means not needed argument.it's a convention
+);
+console.log(diceRolls);
+
+//important Example
+console.log(document.querySelectorAll('.movements__value')); //array like but not iterable
+console.log(Array.from(document.querySelectorAll('.movements__value'))); //array and is iterable
+
+labelBalance.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const movementFromUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementFromUI);
+});
