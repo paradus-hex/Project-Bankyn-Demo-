@@ -147,7 +147,7 @@ btnLogin.addEventListener('click', function (e) {
     // inputLoginPin.blur();
 
     //Display UI and Welcome message
-    labelWelcome.textContent = `Welcome, ${currentAcc.owner.split(' ')[0]}!`;
+    labelWelcome.textContent = `Welcome, ${currentAcc.owner}!`;
     containerApp.style.opacity = 100;
 
     updateUI(currentAcc);
